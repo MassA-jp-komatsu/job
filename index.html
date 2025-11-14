@@ -46,56 +46,60 @@
 </header>
 
 <section>
-  <h2>プロフィール</h2>
-  <p><strong>氏名：</strong>小松 将夫（こまつ まさお）</p>
-  <p id="age"></p>
-
-<script>
-  // 生年月日を設定（例：1986年8月23日）
-  const birthDate = new Date('1986-08-23');
-
-  function calculateAge(birthDate) {
-    const today = new Date();
-    let age = today.getFullYear() - birthDate.getFullYear();
-    const hasHadBirthdayThisYear =
-      today.getMonth() > birthDate.getMonth() ||
-      (today.getMonth() === birthDate.getMonth() && today.getDate() >= birthDate.getDate());
-
-    if (!hasHadBirthdayThisYear) {
-      age--;
-    }
-    return age;
+<style>
+  /* 既存のCSSに追加 */
+  .flexbox {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
   }
+  .profile-box, .career-box {
+    flex: 1;
+    min-width: 300px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+  }
+</style>
 
-  document.getElementById('age').textContent = `年齢：${calculateAge(birthDate)}歳`;
-</script>
-  <p><strong>住所：</strong></p>
-  <p><strong>電話：</strong></p>
-  <p><strong>メール：</strong></p>
-  <p><strong>学歴：</strong>広島県立安西高等学校 普通科 入学（2002年4月）〜卒業（2005年3月）</p>
-</section>
+<div class="flexbox">
+  <section class="profile-box">
+    <h2>プロフィール</h2>
+    <p><strong>氏名：</strong>小松 将夫（こまつ まさお）</p>
+    <p id="age"></p>
+    <script>
+      const birthDate = new Date('1986-08-23');
+      function calculateAge(birthDate) {
+        const today = new Date();
+        let age = today.getFullYear() - birthDate.getFullYear();
+        const hasHadBirthdayThisYear =
+          today.getMonth() > birthDate.getMonth() ||
+          (today.getMonth() === birthDate.getMonth() && today.getDate() >= birthDate.getDate());
+        if (!hasHadBirthdayThisYear) age--;
+        return age;
+      }
+      document.getElementById('age').textContent = `年齢：${calculateAge(birthDate)}歳`;
+    </script>
+    <p><strong>住所：</strong></p>
+    <p><strong>電話：</strong></p>
+    <p><strong>メール：</strong></p>
+    <p><strong>学歴：</strong>広島県立安西高等学校 普通科 入学（2002年4月）〜卒業（2005年3月）</p>
+  </section>
 
-<section>
-  <h2>職務経歴</h2>
-  <ul>
-    <li>ブックオフ広島西原店（2006年7月〜2009年3月）<br>
-        業務内容：本、CDの買取販売</li>
-    <li>株式会社トリドールホールディングス（2009年10月〜2015年5月）<br>
-        業務内容：丸亀製麺でのうどん作り、洗い場</li>
-    <li>株式会社ユアーズ（2015年6月〜2018年1月）<br>
-        業務内容：スーパーマーケットの商品陳列</li>
-    <li>合同会社西友（2018年4月〜2019年6月）<br>
-        業務内容：スーパーマーケットの商品陳列、レジ、インターネット販売の商品出荷準備</li>
-    <li>株式会社JR西日本広島中四メンテック（2019年6月〜2021年9月）<br>
-        業務内容：新幹線車両基地での車内清掃</li>
-    <li>三友環境サービス株式会社（2022年3月〜2022年4月）<br>
-        業務内容：リサイクルセンターでのごみの仕分け</li>
-    <li>太平ビルサービス株式会社広島支店（2022年6月〜2024年2月）<br>
-        業務内容：ホテルの客室清掃</li>
-    <li>エヌエス・テック株式会社（2024年6月〜2024年7月）<br>
-        業務内容：派遣先の鉄加工産業での検品</li>
-  </ul>
-</section>
+  <section class="career-box">
+    <h2>職務経歴</h2>
+    <ul>
+      <li>ブックオフ広島西原店（2006年7月〜2009年3月）<br>業務内容：本、CDの買取販売</li>
+      <li>株式会社トリドールホールディングス（2009年10月〜2015年5月）<br>業務内容：丸亀製麺でのうどん作り、洗い場</li>
+      <li>株式会社ユアーズ（2015年6月〜2018年1月）<br>業務内容：スーパーマーケットの商品陳列</li>
+      <li>合同会社西友（2018年4月〜2019年6月）<br>業務内容：スーパーマーケットの商品陳列、レジ、インターネット販売の商品出荷準備</li>
+      <li>株式会社JR西日本広島中四メンテック（2019年6月〜2021年9月）<br>業務内容：新幹線車両基地での車内清掃</li>
+      <li>三友環境サービス株式会社（2022年3月〜2022年4月）<br>業務内容：リサイクルセンターでのごみの仕分け</li>
+      <li>太平ビルサービス株式会社広島支店（2022年6月〜2024年2月）<br>業務内容：ホテルの客室清掃</li>
+      <li>エヌエス・テック株式会社（2024年6月〜2024年7月）<br>業務内容：派遣先の鉄加工産業での検品</li>
+    </ul>
+  </section>
+</div>
 
 <section>
   <h2>自己PR・趣味</h2>
@@ -135,6 +139,7 @@
 </body>
 
 </html>
+
 
 
 
